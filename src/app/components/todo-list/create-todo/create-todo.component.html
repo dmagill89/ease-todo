@@ -1,0 +1,29 @@
+<dialog #addTodo
+    class="bg-white dark:bg-gray-700 rounded-lg"
+>
+    <header class="border-b p-4">
+        Add Todo
+    </header>
+
+    <form class="p-4" [formGroup]="todoForm">
+        <div>
+            <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title*</label>
+            <input class="input"
+                id="title"
+                formControlName="title"
+                required
+            />
+        </div>
+
+        <div>
+            <label for="dueDate" class="block mb-2">Due Date*</label>
+            <input id="dueDate" class="bg-gray-50 border rounded-lg" formControlName="dueDate"  type="date"/>
+        </div>
+    </form>
+
+    <footer class="flex border-t p-4">
+        <button class="btn-secondary mr-4" (click)="discard()">Discard</button>
+
+        <button class="btn-primary" (click)="add()">Add</button>
+    </footer>
+</dialog>
